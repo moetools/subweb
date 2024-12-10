@@ -14,5 +14,6 @@ export default {
 <style>
 @import '@/assets/vendor/css/rtl/core.css';
 @import '@/assets/vendor/css/rtl/theme-default.css';
+@import '@/assets/vendor/css/rtl/sweetalert2.css';
 @import 'element-plus/theme-chalk/index.css';
 </style>
