@@ -12,8 +12,8 @@ export default {
 </script>
 
 <style>
-@import '@/assets/vendor/css/rtl/core.css';
-@import '@/assets/vendor/css/rtl/theme-default.css';
-@import '@/assets/vendor/css/rtl/sweetalert2.css';
-@import 'element-plus/theme-chalk/index.css';
+@import '@/assets/vendor/css/rtl/core.min.css';
+@import '@/assets/vendor/css/rtl/theme-default.min.css';
+@import '@/assets/vendor/css/rtl/sweetalert2.min.css';
+@import '@/assets/vendor/css/rtl/theme-chalk.min.css';
 </style>
