@@ -11,12 +11,7 @@ window.config = {
       title: '首页',
       link: '/',
       target: '',
-    },
-    {
-      title: 'GitHub',
-      link: 'https://github.com/stilleshan/subweb',
-      target: '_blank',
-    },
+    }
   ],
   // 远程配置地址,可以自行按照格式添加。
   remoteConfigOptions: [
