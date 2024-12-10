@@ -21,8 +21,8 @@
                 <div class="col-7 col-md-6">
                   <label class="form-label" for="api">后端服务</label>
                   <select class="form-select" id="api" @change="selectApi">
-                    <option v-for="(apiUrl,index) in apiUrls" :key="index" :value="apiUrl">
-                      {{ apiUrl }}
+                    <option v-for="apiUrl in apiUrls" :key="apiUrl" :value="apiUrl.value">
+                      {{ apiUrl.text }}
                     </option>
                     <option value="manual">自定义后端 API 地址</option>
                   </select>
@@ -159,7 +159,7 @@ export default {
         shortUrl: '',
       },
       urls: [],
-      api: window.config.apiUrls[0],
+      api: window.config.apiUrls[0].value,
       target: 'clash',
       remoteConfig: '',
     };
