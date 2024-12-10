@@ -25,7 +25,7 @@ window.config = {
     }
   ],
   // 短域名服务地址
-  shortUrls: ['https://s.ops.ci'],
+  shortUrls: ['https://suo.yt', 'https://v1.mk', 'https://s.ops.ci'],
   // 首页菜单
   menuItem: [
     {
