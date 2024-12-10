@@ -1,6 +1,6 @@
 window.config = {
   // 网站标题
-  siteName: 'Subconverter Web',
+  siteName: 'MoeTools',
   // API 地址
   apiUrls: ['http://127.0.0.1:25500'],
   // 短域名服务地址
