@@ -91,7 +91,14 @@
                 <div class="col-12 col-md-2">
                   <button type="button" class="btn btn-success" @click="getSubUrl()">转换</button>
                 </div>
-                <div class="col-12 col-md-10">
+                <div class="col-12 col-md-3">
+                  <select class="form-select" id="remote" @change="selectShortUrl">
+                    <option v-for="(url,index) in shortUrls" :key="index" :value="url">
+                      {{ url }}
+                    </option>
+                  </select>
+                </div>
+                <div class="col-12 col-md-7">
                   <input class="form-control" placeholder="点击获取短链" v-model.trim="result.shortUrl" />
                 </div>
                 <div class="col-12 col-md-2">
@@ -148,7 +155,7 @@ export default {
         { value: 'singbox', text: 'Sing-box' },
       ],
       apiUrls: window.config.apiUrls,
-      shortUrl: window.config.shortUrl,
+      shortUrls: window.config.shortUrls,
       remoteConfigOptions: window.config.remoteConfigOptions,
       moreConfig: this.DEFAULT_MORECONFIG,
       isShowMoreConfig: false,
@@ -160,6 +167,7 @@ export default {
       },
       urls: [],
       api: window.config.apiUrls[0].value,
+      shortUrl: window.config.shortUrls[0],
       target: 'clash',
       remoteConfig: '',
     };
@@ -185,6 +193,9 @@ export default {
         this.isShowRemoteConfig = false;
         this.remoteConfig = event.target.value;
       }
+    },
+    selectShortUrl(event) {
+      this.shortUrl = event.target.value;
     },
     toCopy(url, title) {
       if (!url) {
@@ -241,6 +252,10 @@ export default {
     getShortUrl() {
       if (!this.getConverter()) {
         return;
+      }
+      if (!regexCheck(this.shortUrl)) {
+        this.$showDialog('warning', '注意', '请选择短链接提供方。');
+        return false;
       }
       let data = new FormData();
       data.append('longUrl', btoa(this.result.subUrl));
